@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f6f1e7;
+    color: #1f1a14;
+}
+
+.app {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 8rem;
+    margin-top: 0.5rem;
+}
+
+button {
+    margin-right: 0.5rem;
+}
+
+textarea,
+.note {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid #d9d0c3;
+    border-radius: 0.75rem;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+}
+textarea {
+    min-height: 8rem;
+    margin-top: 0.5rem;
+}
+.note p {
+    margin: 0 0 0.75rem;
+    white-space: pre-wrap;
+}
