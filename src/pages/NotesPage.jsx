@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { loadNotes, saveNotes } from '../notes.js'
-
-const MAX_NOTE_LENGTH = 2000
+import { useConfig } from '../useConfig.js'
 
 export default function NotesPage() {
     const [notes, setNotes] = useState(() => loadNotes())
     const [text, setText] = useState('')
     const [editingId, setEditingId] = useState(null)
     const [message, setMessage] = useState('')
+    const { config, error } = useConfig()
+    const maxNoteLength = config.maxNoteLength
+
     function updateNotes(next) {
         setNotes(next)
         saveNotes(next)
@@ -69,12 +71,13 @@ export default function NotesPage() {
                 <textarea
                     id="note"
                     value={text}
-                    maxLength={MAX_NOTE_LENGTH}
+                    maxLength={maxNoteLength}
                     onChange={(event) => setText(event.target.value)}
                 />
                 <p>
-                    {text.length}/{MAX_NOTE_LENGTH}
+                    {text.length}/{maxNoteLength}
                 </p>
+                {error && <p>{error}</p>}
                 <button type="submit">
                     {editingId ? 'Uppdatera' : 'Spara'}
                 </button>
