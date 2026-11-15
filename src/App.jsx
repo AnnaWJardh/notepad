@@ -6,7 +6,7 @@ export default function App() {
     return (
         <div className="app">
             <header>
-                <strong>Notepad</strong>
+                <strong>Notepad app</strong>
                 <nav>
                     <Link to="/">Anteckningar</Link>
                     <Link to="/about">Om</Link>
